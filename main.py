@@ -18,7 +18,6 @@ def start_generation():
     primary_path = "images/primary/"
     secondary_path = "images/secondary/"
     wheels_path = "images/wheels/"
-    sticker_path = "images/stickers/"
     artwork_path = "images/artwork/"
     lights_path = "images/lights/"
     trait1_path = "images/trait1/"
@@ -36,9 +35,8 @@ def start_generation():
         aura = random.choice(sorted(os.listdir(aura_path)))
         primary = random.choices(sorted(os.listdir(primary_path)), weights=(30, 3, 2, 15, 3, 2, 8, 20, 10, 5, 2, 4))[0]
         secondary = random.choice(sorted(os.listdir(secondary_path)))
-        sticker = random.choices(sorted(os.listdir(sticker_path)), weights=(5, 25, 25, 20, 20, 5))[0]
         wheels = random.choices(sorted(os.listdir(wheels_path)), weights=(8, 90, 2))[0]
-        artwork = random.choice(sorted(os.listdir(artwork_path)))
+        artwork = random.choices(sorted(os.listdir(artwork_path)), weights=(5, 25, 25, 5, 20, 20))[0]
         lights = random.choices(sorted(os.listdir(lights_path)), weights=(80, 20))[0]
         trait1 = random.choices(sorted(os.listdir(trait1_path)), weights=(5, 5, 10, 50, 10, 20))[0]
         trait2 = random.choice(sorted(os.listdir(trait2_path)))
@@ -61,10 +59,6 @@ def start_generation():
                 {
                     'trait_type': 'Secondary color',
                     'value': secondary
-                },
-                {
-                    'trait_type': 'Sticker',
-                    'value': sticker
                 },
                 {
                     'trait_type': 'Wheels',
@@ -115,10 +109,6 @@ def start_generation():
                     'value': secondary
                 },
                 {
-                    'trait_type': 'Sticker',
-                    'value': sticker
-                },
-                {
                     'trait_type': 'Wheels',
                     'value': wheels
                 },
@@ -159,7 +149,6 @@ def start_generation():
             aura_img = Image.open(aura_path + aura)
             primary_img = Image.open(primary_path + primary)
             secondary_img = Image.open(secondary_path + secondary)
-            sticker_img = Image.open(sticker_path + sticker)
             wheels_img = Image.open(wheels_path + wheels)
             artwork_img = Image.open(artwork_path + artwork)
             lights_img = Image.open(lights_path + lights)
@@ -170,7 +159,6 @@ def start_generation():
             base_image.paste(aura_img, (0, 0), mask=aura_img)
             base_image.paste(primary_img, (0, 0), mask=primary_img)
             base_image.paste(secondary_img, (0, 0), mask=secondary_img)
-            base_image.paste(sticker_img, (0, 0), mask=sticker_img)
             base_image.paste(wheels_img, (0, 0), mask=wheels_img)
             base_image.paste(artwork_img, (0, 0), mask=artwork_img)
             base_image.paste(lights_img, (0, 0), mask=lights_img)
@@ -187,7 +175,6 @@ def start_generation():
             aura_img = Image.open(aura_path + aura)
             primary_img = Image.open(primary_path + primary)
             secondary_img = Image.open(secondary_path + secondary)
-            sticker_img = Image.open(sticker_path + sticker)
             wheels_img = Image.open(wheels_path + wheels)
             artwork_img = Image.open(artwork_path + artwork)
             lights_img = Image.open(lights_path + lights)
@@ -202,7 +189,6 @@ def start_generation():
             base_image.paste(aura_img, (0, 0), mask=aura_img)
             base_image.paste(primary_img, (0, 0), mask=primary_img)
             base_image.paste(secondary_img, (0, 0), mask=secondary_img)
-            base_image.paste(sticker_img, (0, 0), mask=sticker_img)
             base_image.paste(wheels_img, (0, 0), mask=wheels_img)
             base_image.paste(artwork_img, (0, 0), mask=artwork_img)
             base_image.paste(lights_img, (0, 0), mask=lights_img)
